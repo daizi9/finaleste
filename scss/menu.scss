@@ -1,0 +1,15 @@
+
+.menu {
+    background-color: #000;
+  
+    .navbar ul li a {
+      color: white;
+  
+      &:hover {
+        color: $color-principal;
+      }
+    }
+  }
+
+  
+  
