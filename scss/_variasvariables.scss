@@ -1,0 +1,282 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #dbc4c4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// GRADIENT SECTION
+.gradiente {
+  background: linear-gradient(to right, rgba(232, 39, 198, 0.5), transparent)
+    url(../img/viv2.jpeg);
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 100px;
+  padding: 30px;
+
+  h2,
+  h3 {
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    margin-top: 25px;
+    color: #444;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    color: #312e2e;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px black;
+  }
+}
+
+// PRODUCTOS Y CARRITO
+.icon-cart,
+.icon-tienda,
+.icon-close {
+  width: 25px;
+  height: 25px;
+  stroke: #000;
+  cursor: pointer;
+
+  &:hover {
+    stroke: red;
+  }
+}
+
+.container-icon {
+  position: relative;
+}
+
+.count-products {
+  position: absolute;
+  top: 55%;
+  right: 0;
+  background-color: #000;
+  color: #241518;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.container-product {
+  position: absolute;
+  top: 50px;
+  background-color: #160404;
+  width: 400px;
+  right: 0;
+  z-index: 1;
+}
+
+.cartproducts {
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  flex: 0.8;
+}
+
+.tit-carrito,
+.precio-produc,
+.cantidad-producto-carrito,
+.pagar {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.precio-produc {
+  margin-left: 10px;
+}
+
+.eltotal {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 20px;
+  align-items: center;
+}
+
+.infoca-product {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.item {
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  figure {
+    overflow: hidden;
+
+    img {
+      width: 83%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .info-producto {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 2;
+
+    .price {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    button {
+      background-color: #040404;
+      color: white;
+      padding: 15px 10px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+#contador {
+  font-size: 12px;
+}
+
+.hidden-cart {
+  display: none;
+}
+
+// RESPONSIVE
+@media (max-width: 991px) {
+  .menu {
+    padding: 20px;
+
+    label {
+      display: initial;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: gray;
+      display: none;
+
+      ul li {
+        width: 100%;
+      }
+    }
+  }
+
+  #menu:checked ~ .navbar {
+    display: initial;
+  }
+
+  .header-content {
+    padding: 30px;
+  }
+
+  .header-info h1 {
+    font-size: 50px;
+    margin-bottom: 5px;
+  }
+
+  .gym {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+
+    &-1 {
+      width: 100%;
+      padding: 0;
+      order: 1;
+
+      h2 {
+        margin-bottom: 15px;
+      }
+    }
+
+    .btn-2 {
+      margin-bottom: 35px;
+    }
+
+    .gym-2 {
+      order: 2;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .img-1,
+    .img-2 {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 15px;
+    }
+
+    .links ul li {
+      margin: 0 10px;
+    }
+  }
+}
